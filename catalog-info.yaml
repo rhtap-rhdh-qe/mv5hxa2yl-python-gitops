@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: mv5hxa2yl-python-gitops
+  description: This is GitOps manifest for mv5hxa2yl-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=mv5hxa2yl-python
+    backstage.io/kubernetes-id: mv5hxa2yl-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: mv5hxa2yl-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:mv5hxa2yl-python
